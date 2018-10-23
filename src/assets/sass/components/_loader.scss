@@ -1,49 +1,37 @@
 section.loader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  top: calc(1rem + 2px);
+  left: calc(1rem + 2px);
+  width: calc(100% - 2rem - 4px);
+  height: calc(100vh - 2rem - 4px);
   background-color: $secondary;
   color: $primary;
-  font-family: Arial;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-family: $title;
+  font-size: 25vw;
 
-  .bar {
-    margin-top: 1rem;
-    transition: 1s;
+  .back {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .front {
+    z-index: 20;
+    height: 100%;
+    position: absolute;
     overflow: hidden;
-    position: relative;
-    .ctn-slashes {
-      width: 19rem;
-      transition: 1s ease-in;
-      overflow: hidden;
-      .slashes {
-        white-space: nowrap;
-      }
-    }
+    background-color: $primary;
+    width: 0;
+    transition: 0.3s;
 
-    .customSlashe {
-      opacity: 0;
+    .inner-front {
       position: absolute;
-      top: 50%;
-      left: 47.55%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  &.disapear {
-    .text, .bar {
-      transform: translateY(-100px);
-      opacity: 0;
-      transition: 1s ease;
-    }
-  }
-
-  &.reduce {
-    .bar .ctn-slashes {
-      width: 1rem;
+      top: 0;
+      left: 0;
+      width: calc(100vw - 2rem - 4px);
+      height: 100%;
+      color: $secondary;
     }
   }
 }

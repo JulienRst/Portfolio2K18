@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div class="border-container"></div>
     <router-view/>
     <loader :loaded="isLoaded" :charge="loadCharge"/>
     <!-- <menu :show="false" /> -->
@@ -24,7 +25,7 @@ export default {
     loader.start().subscribe((val) => {
       this.loadCharge = val
     }, () => {}, () => {
-      window.setTimeout(() => { this.isLoaded = true }, 500)
+      // window.setTimeout(() => { this.isLoaded = true }, 500)
     })
   }
 }

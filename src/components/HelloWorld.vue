@@ -1,8 +1,5 @@
 <template>
   <section class="hello-world">
-    <div class="border-container" :class="{appear: anim.border}">
-      <!-- <canvas id="border"></canvas> -->
-    </div>
     <div class="hud column">
       <div class="on-border ctn-menu row" :class="{'hud-elem-active': anim.first, 'hud-elem-second-active': anim.second}">
         <div class="text">
