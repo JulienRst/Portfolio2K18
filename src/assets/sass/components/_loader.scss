@@ -1,0 +1,49 @@
+section.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $secondary;
+  color: $primary;
+  font-family: Arial;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  .bar {
+    margin-top: 1rem;
+    transition: 1s;
+    overflow: hidden;
+    position: relative;
+    .ctn-slashes {
+      width: 19rem;
+      transition: 1s ease-in;
+      overflow: hidden;
+      .slashes {
+        white-space: nowrap;
+      }
+    }
+
+    .customSlashe {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 47.55%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.disapear {
+    .text, .bar {
+      transform: translateY(-100px);
+      opacity: 0;
+      transition: 1s ease;
+    }
+  }
+
+  &.reduce {
+    .bar .ctn-slashes {
+      width: 1rem;
+    }
+  }
+}

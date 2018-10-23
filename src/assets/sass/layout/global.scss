@@ -1,0 +1,35 @@
+.red {
+  color: $red;
+  background-color: $secondary;
+
+  &::selection {
+    color: $primary;
+  }
+}
+
+.link {
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    transition: 0.2s;
+    height: 3px;
+    width: 100%;
+    background-color: $red;
+  }
+
+  &:hover {
+    color: white;
+    transition: 0.2s;
+
+    &::before {
+      bottom: calc(50% - 3px);
+      transition: 0.2s;
+      background-color: $primary;
+    }
+  }
+}
